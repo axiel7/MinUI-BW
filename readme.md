@@ -23,3 +23,10 @@ Create a folder `release`.
 Now you can compile with `make`.
 
 If you get some error with `zip` just execute `apt update && apt install zip`.
+
+# Colors
+
+If you want to change the theme colors, you need to modify the images in the `res` folders, and also modify the SDL_Color variables at the top in these files:
+
+- `src/MinUI/main.c`
+- `src/libmmenu/mmenu.c`
