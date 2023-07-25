@@ -37,6 +37,11 @@
 #include <signal.h>
 #include <unistd.h>
 
+static SDL_Color gold = {0x27,0x27,0x27};
+static SDL_Color gold_shadow = {0x4f,0x4f,0x4f};
+static SDL_Color bronze = {0x00,0x00,0x00};
+static SDL_Color white = {0xff,0xff,0xff};
+
 static void error_handler(int sig) {
 	void *array[10];
 	size_t size;
@@ -1468,12 +1473,12 @@ int main(void) {
 				if (top->entries->count && !show_setting) {
 					char mini[8];
 					sprintf(mini, "/%d", top->entries->count);
-					text = TTF_RenderUTF8_Blended(tiny, mini, (SDL_Color){0xd2,0xb4,0x6c});
+					text = TTF_RenderUTF8_Blended(tiny, mini, gold);
 					SDL_BlitSurface(text, NULL, screen, &(SDL_Rect){184,9,0,0});
 					SDL_FreeSurface(text);
 			
 					sprintf(mini, "%d", top->selected+1);
-					text = TTF_RenderUTF8_Blended(tiny, mini, (SDL_Color){0xd2,0xb4,0x6c});
+					text = TTF_RenderUTF8_Blended(tiny, mini, gold);
 					SDL_BlitSurface(text, NULL, screen, &(SDL_Rect){184-text->w,9,0,0});
 					SDL_FreeSurface(text);
 				}
@@ -1497,7 +1502,7 @@ int main(void) {
 					SDL_BlitSurface(text, NULL, screen, &(SDL_Rect){35,212,0,0});
 					SDL_FreeSurface(text);
 			
-					text = TTF_RenderUTF8_Blended(font, "X", (SDL_Color){0x9f,0x89,0x52});
+					text = TTF_RenderUTF8_Blended(font, "X", bronze);
 					SDL_BlitSurface(text, NULL, screen, &(SDL_Rect){10+6,210+1,0,0});
 					SDL_FreeSurface(text);
 				}
@@ -1514,7 +1519,7 @@ int main(void) {
 				SDL_BlitSurface(text, NULL, screen, &(SDL_Rect){276,212,0,0});
 				SDL_FreeSurface(text);
 			
-				text = TTF_RenderUTF8_Blended(font, "A", (SDL_Color){0x9f,0x89,0x52});
+				text = TTF_RenderUTF8_Blended(font, "A", bronze);
 				SDL_BlitSurface(text, NULL, screen, &(SDL_Rect){251+6,210+1,0,0});
 				SDL_FreeSurface(text);
 			
@@ -1525,7 +1530,7 @@ int main(void) {
 					SDL_BlitSurface(text, NULL, screen, &(SDL_Rect){276-68,212,0,0});
 					SDL_FreeSurface(text);
 			
-					text = TTF_RenderUTF8_Blended(font, "B", (SDL_Color){0x9f,0x89,0x52});
+					text = TTF_RenderUTF8_Blended(font, "B", bronze);
 					SDL_BlitSurface(text, NULL, screen, &(SDL_Rect){251+6-68+1,210+1,0,0});
 					SDL_FreeSurface(text);
 				}
@@ -1543,7 +1548,7 @@ int main(void) {
 					SDL_BlitSurface(ui_highlight_bar, NULL, screen, &(SDL_Rect){0,38+y,0,0});
 					
 					// shadow
-					text = TTF_RenderUTF8_Blended(font, name, (SDL_Color){0x68,0x5a,0x35});
+					text = TTF_RenderUTF8_Blended(font, name, gold_shadow);
 					if (text->w>kMaxTextWidth) needs_scrolling = 1;
 					SDL_BlitSurface(text, &(SDL_Rect){0,0,kMaxTextWidth,text->h}, screen, &(SDL_Rect){16+1,38+y+6+2,0,0});
 					SDL_FreeSurface(text);
@@ -1580,7 +1585,7 @@ int main(void) {
 			char* fullname = strrchr(entry->path, '/')+1;
 			char* name = entry->conflict ? fullname : entry->name;
 			
-			text = TTF_RenderUTF8_Blended(font, name, (SDL_Color){0x68,0x5a,0x35});
+			text = TTF_RenderUTF8_Blended(font, name, gold_shadow);
 			if (text->w-scroll_ox>kMaxTextWidth) {
 				// bar
 				SDL_BlitSurface(ui_highlight_bar, NULL, screen, &(SDL_Rect){0,38+y,0,0});
