@@ -13,10 +13,12 @@ Get the [TrimUI toolchain](https://github.com/shauninman/union-trimui-toolchain)
 
 Clone this repo into the `workspace` folder:
 
-`git clone --recurse-submodules https://github.com/axiel7/MinUI-BW.git`
+```
+git clone --recurse-submodules https://github.com/axiel7/MinUI-BW.git
+```
 
 I had to modify the toolchain path from `/opt/trimui-toolchain/bin/` to `/opt/trimui-toolchain/usr/bin/` to make it work.
-As I needed to modify some submodules, you can download the changed files [here](), just merge the MinUI folders.
+As I needed to modify some submodules, you can download the changed files [here](https://github.com/axiel7/MinUI-BW/releases/download/20230724/submodules_toolchain_path.7z), just merge the MinUI folders.
 
 Create a folder `release`.
 
