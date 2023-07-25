@@ -1,4 +1,4 @@
-CROSS_COMPILE := /opt/trimui-toolchain/bin/arm-buildroot-linux-gnueabi-
+CROSS_COMPILE := /opt/trimui-toolchain/usr/bin/arm-buildroot-linux-gnueabi-
 
 TARGET=MinUI
 
