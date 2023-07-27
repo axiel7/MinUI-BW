@@ -1470,18 +1470,18 @@ int main(void) {
 			}
 			else {
 				// x/y text
-				if (top->entries->count && !show_setting) {
+				/*if (top->entries->count && !show_setting) {
 					char mini[8];
 					sprintf(mini, "/%d", top->entries->count);
-					text = TTF_RenderUTF8_Blended(tiny, mini, gold);
+					text = TTF_RenderUTF8_Blended(tiny, mini, white);
 					SDL_BlitSurface(text, NULL, screen, &(SDL_Rect){184,9,0,0});
 					SDL_FreeSurface(text);
 			
 					sprintf(mini, "%d", top->selected+1);
-					text = TTF_RenderUTF8_Blended(tiny, mini, gold);
+					text = TTF_RenderUTF8_Blended(tiny, mini, white);
 					SDL_BlitSurface(text, NULL, screen, &(SDL_Rect){184-text->w,9,0,0});
 					SDL_FreeSurface(text);
-				}
+				}*/
 				
 				// battery
 				int charge = getBatteryLevel();
